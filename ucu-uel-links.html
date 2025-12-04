@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>UCU UEL Links</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+
+body{
+  margin:0;
+  padding:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:#ffffff;
+  color:#333333;
+}
+
+/* Search bar */
+.searchbar-wrapper{
+  background:#f1f1f1;
+  padding:10px 15px;
+  border-bottom:1px solid #ddd;
+}
+.searchbar-form{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  align-items:center;
+  font-size:14px;
+}
+.searchbar-form input[type="text"]{
+  flex:1 1 200px;
+  padding:6px 8px;
+  border:1px solid #ccc;
+  border-radius:2px;
+  font-size:14px;
+}
+.searchbar-form button{
+  padding:6px 12px;
+  border-radius:2px;
+  border:1px solid #4d90fe;
+  background:#4d90fe;
+  color:#fff;
+  cursor:pointer;
+}
+.searchbar-form button:hover{
+  background:#3367d6;
+}
+.searchbar-form label{
+  display:inline-flex;
+  align-items:center;
+  gap:4px;
+  font-size:13px;
+}
+
+/* Optional headline */
+.page-headline{
+  padding:12px 15px 0 15px;
+  font-size:20px;
+  font-weight:bold;
+}
+
+/* Main layout */
+.maincontent{
+  clear:both;
+  width:80%;
+  font-size:.8125em;
+  max-width:92.3em;
+  margin:0 auto;
+  padding:1em 0;
+  color:#333333;
+  line-height:1.5em;
+  position:relative;
+}
+.section{
+  clear:both;
+  padding:0;
+  margin:0;
+}
+
+/* FLEXBOX 5-column layout */
+.group{
+  display:flex;
+  flex-wrap:nowrap;            /* no wrapping on desktop */
+  justify-content:space-between;
+}
+
+/* Columns: fixed 5 across */
+.col{
+  box-sizing:border-box;
+  flex:0 0 19%;                /* ~5 columns across */
+  max-width:19%;
+  margin:1% 0;
+}
+
+/* Keep span_1_of_5 etc. for compatibility */
+.span_1_of_5,
+.span_2_of_5,
+.span_3_of_5,
+.span_4_of_5,
+.span_5_of_5{}
+
+/* Phone layout: stack columns */
+@media only screen and (max-width:767px){
+  .group{
+    flex-wrap:wrap;
+  }
+  .col{
+    flex:1 1 100%;
+    max-width:100%;
+    margin:1% 0;
+  }
+}
+
+/* Buttons – as original */
+.btn{
+  text-align:left;
+  width:200px;
+  color:#333;
+  position:relative;
+  display:inline-block;
+  overflow:visible;
+  margin:8px 0 0;
+  padding:10px 14px;
+  cursor:pointer;
+  outline:0;
+  border-style:none none none solid;
+  border-width:0 0 0 3px;
+  border-image:none 100% / 1 / 0 stretch;
+  background:#eee none repeat scroll 0 0;
+  z-index:1;
+  font-family:"Segoe UI",Helvetica,Arial,sans-serif;
+  font-size:16px;
+  line-height:18px;
+  min-width:42px;
+  text-shadow:#fff 0 1px 0;
+  text-decoration:none;
+  white-space:nowrap;
+  vertical-align:inherit;
+  font-weight:600;
+}
+.btn:hover{
+  background-color:#aaa;
+  color:#000;
+}
+
+/* Colour classes – palette-driven */
+.blue-btn{   border-color:currentcolor currentcolor currentcolor #4d90fe; }
+.green-btn{  border-color:currentcolor currentcolor currentcolor #35aa47; }
+.orange-btn{ border-color:currentcolor currentcolor currentcolor #ff9900; }
+.purple-btn{ border-color:currentcolor currentcolor currentcolor #852b99; }
+.red-btn{    border-color:currentcolor currentcolor currentcolor #d84a38; }
+
+/* Headers – as original */
+.hdr{
+  text-align:left;
+  width:200px;
+  color:#fff;
+  position:relative;
+  display:inline-block;
+  overflow:visible;
+  margin:0;
+  margin-top:8px;
+  padding:10px 14px;
+  cursor:pointer;
+  outline:0;
+  border:0;
+  background-repeat:repeat-x;
+  z-index:1;
+  font-family:"Segoe UI",Helvetica,Arial,sans-serif;
+  font-size:14px;
+  line-height:14px;
+  min-width:42px;
+  text-shadow:none;
+  text-decoration:none;
+  white-space:nowrap;
+  vertical-align:inherit;
+}
+
+/* Header colours */
+.blue-hdr{   background-color:#4d90fe; }
+.green-hdr{  background-color:#35aa47; }
+.orange-hdr{ background-color:#ff9900; }
+.purple-hdr{ background-color:#852b99; }
+.red-hdr{    background-color:#d84a38; }
+
+/* Header paragraph – controls vertical spacing */
+.hdr-para{
+  margin-bottom:1.8em;
+  line-height:160%;
+  margin:0;
+}
+
+  </style>
+</head>
+<body>
+
+<div class="page-headline">UCU UEL Links</div>
+
+<div class="searchbar-wrapper">
+  <form class="searchbar-form" method="get" action="https://www.google.co.uk/search">
+    <input type="text" name="q" placeholder="Search...">
+    <label><input type="radio" name="searchtype" value="web" checked> Web</label>
+    <label><input type="radio" name="searchtype" value="wiki"> Wikipedia</label>
+    <button type="submit">Go</button>
+  </form>
+</div>
+
+<div class="maincontent">
+  <div class="section group">
+<div class="col span_1_of_5">
+    <p class="hdr-para">
+      <a class="hdr green-hdr" data-section-header="true">
+        <b>Common</b>
+      </a>
+    </p>
+
+    <a class="btn green-btn" href="https://mail.google.com/" target="_blank" rel="noopener noreferrer">
+      Gmail
+    </a>
+
+    <a class="btn green-btn" href="http://mail.live.com/" target="_blank" rel="noopener noreferrer">
+      Live
+    </a>
+
+    <p class="hdr-para">
+      <a class="hdr blue-hdr" data-section-header="true">
+        <b>UEL</b>
+      </a>
+    </p>
+
+    <a class="btn blue-btn" href="https://www.uel.ac.uk" target="_blank" rel="noopener noreferrer">
+      Home
+    </a>
+
+    <a class="btn blue-btn" href="https://outlook.office.com/owa/?realm=uel.ac.uk" target="_blank" rel="noopener noreferrer">
+      UEL email
+    </a>
+
+    <a class="btn blue-btn" href="https://moodle.uel.ac.uk/my/" target="_blank" rel="noopener noreferrer">
+      UEL moodle
+    </a>
+
+    <a class="btn blue-btn" href="https://uelac.sharepoint.com" target="_blank" rel="noopener noreferrer">
+      UEL intranet
+    </a>
+
+    <a class="btn blue-btn" href="https://uelac-my.sharepoint.com/" target="_blank" rel="noopener noreferrer">
+      One Drive
+    </a>
+
+    <p class="hdr-para">
+      <a class="hdr red-hdr" data-section-header="true">
+        <b>UEL Policies</b>
+      </a>
+    </p>
+
+    <a class="btn blue-btn" href="https://uelac.sharepoint.com/sites/PoliciesandProcedures/SitePages/A-Z-(Employee-Handbook).aspx" target="_blank" rel="noopener noreferrer">
+      Policies (A..Z)
+    </a>
+
+    <a class="btn blue-btn" href="https://www.timeshighereducation.com/academic/news" target="_blank" rel="noopener noreferrer">
+      Disciplinary
+    </a>
+
+    <a class="btn blue-btn" href="https://uelac.sharepoint.com/sites/PoliciesandProcedures/SitePages/Grievance/Grievance-Procedure.aspx" target="_blank" rel="noopener noreferrer">
+      Grievance
+    </a>
+
+    <p class="hdr-para">
+      <a class="hdr orange-hdr" data-section-header="true">
+        <b>UEL Other</b>
+      </a>
+    </p>
+
+    <a class="btn blue-btn" href="https://www.uel.ac.uk/about/annual-reports-financial-statements" target="_blank" rel="noopener noreferrer">
+      Annual reports
+    </a>
+
+    <a class="btn blue-btn" href="https://www.uel.ac.uk/about/governance" target="_blank" rel="noopener noreferrer">
+      Governance
+    </a>
+</div><div class="col span_1_of_5">
+    <p class="hdr-para">
+      <a class="hdr orange-hdr" data-section-header="true">
+        <b>UCU</b>
+      </a>
+    </p>
+
+    <a class="btn blue-btn" href="https://www.ucu.org.uk/" target="_blank" rel="noopener noreferrer">
+      Home
+    </a>
+
+    <a class="btn blue-btn" href="https://www.ucu.org.uk/news" target="_blank" rel="noopener noreferrer">
+      News
+    </a>
+
+    <a class="btn blue-btn" href="https://www.ucu.org.uk/campaigns" target="_blank" rel="noopener noreferrer">
+      Campaigns
+    </a>
+
+    <a class="btn blue-btn" href="https://www.ucu.org.uk/legal" target="_blank" rel="noopener noreferrer">
+      Legal
+    </a>
+
+    <a class="btn blue-btn" href="https://www.ucu.org.uk/legalfaqs" target="_blank" rel="noopener noreferrer">
+      Legal FAQs
+    </a>
+
+    <a class="btn blue-btn" href="https://www.ucu.org.uk/media/5916/Handling-casework-a-guide-for-UCU-reps/pdf/Handling_casework.pdf" target="_blank" rel="noopener noreferrer">
+      Casework Guide (PDF)
+    </a>
+
+    <a class="btn blue-btn" href="https://www.ucu.org.uk/training" target="_blank" rel="noopener noreferrer">
+      Training
+    </a>
+
+    <p class="hdr-para">
+      <a class="hdr green-hdr" data-section-header="true">
+        <b>HE NEWS</b>
+      </a>
+    </p>
+
+    <a class="btn blue-btn" href="https://www.bbc.co.uk/news/topics/cmwj4z64323t" target="_blank" rel="noopener noreferrer">
+      BBC (HE)
+    </a>
+
+    <a class="btn orange-btn" href="https://educationhub.blog.gov.uk/category/universities/" target="_blank" rel="noopener noreferrer">
+      GovUK
+    </a>
+
+    <a class="btn blue-btn" href="https://www.theguardian.com/education/higher-education" target="_blank" rel="noopener noreferrer">
+      Guardian
+    </a>
+
+    <a class="btn blue-btn" href="https://www.newsnow.co.uk/h/UK/Education/Higher+Education" target="_blank" rel="noopener noreferrer">
+      News Now
+    </a>
+
+    <a class="btn orange-btn" href="https://www.officeforstudents.org.uk/news-blog-and-events/" target="_blank" rel="noopener noreferrer">
+      Office for Students
+    </a>
+
+    <a class="btn blue-btn" href="https://www.timeshighereducation.com/academic/news" target="_blank" rel="noopener noreferrer">
+      Times Higher
+    </a>
+</div><div class="col span_1_of_5">
+    <p class="hdr-para">
+      <a class="hdr purple-hdr" data-section-header="true">
+        <b>Branch</b>
+      </a>
+    </p>
+
+    <a class="btn blue-btn" href="https://uel.web.ucu.org.uk/" target="_blank" rel="noopener noreferrer">
+      Website
+    </a>
+
+    <a class="btn blue-btn" href="https://x.com/EastLondonUCU" target="_blank" rel="noopener noreferrer">
+      Twitter
+    </a>
+
+    <a class="btn blue-btn" href="https://www.facebook.com/UCULondon" target="_blank" rel="noopener noreferrer">
+      Facebook
+    </a>
+
+    <a class="btn blue-btn" href="https://www.ucu.org.uk/media/1780/UCU-model-local-rules-June-2016/doc/ucu_modellocalrules_jun16.doc" target="_blank" rel="noopener noreferrer">
+      Model Rules
+    </a>
+
+    <a class="btn blue-btn" href="https://www.ucu.org.uk/yourcontacts?action=search&amp;q=LE417" target="_blank" rel="noopener noreferrer">
+      Page on UCU website
+    </a>
+
+    <p class="hdr-para">
+      <a class="hdr blue-hdr" data-section-header="true">
+        <b>Region</b>
+      </a>
+    </p>
+
+    <a class="btn blue-btn" href="https://uculondonregion.wordpress.com/" target="_blank" rel="noopener noreferrer">
+      Website
+    </a>
+
+    <a class="btn blue-btn" href="http://twitter.com/UCULondon" target="_blank" rel="noopener noreferrer">
+      Twitter
+    </a>
+
+    <a class="btn blue-btn" href="https://www.facebook.com/UCULondon" target="_blank" rel="noopener noreferrer">
+      Facebook
+    </a>
+
+    <p class="hdr-para">
+      <a class="hdr green-hdr" data-section-header="true">
+        <b>Acas</b>
+      </a>
+    </p>
+
+    <a class="btn red-btn" href="https://www.acas.org.uk/codes-of-practice" target="_blank" rel="noopener noreferrer">
+      Codes of practice
+    </a>
+
+    <a class="btn blue-btn" href="https://www.acas.org.uk/acas-guides-on-trade-union-and-employee-representation" target="_blank" rel="noopener noreferrer">
+      TU Rep
+    </a>
+
+    <a class="btn blue-btn" href="https://www.acas.org.uk/acas-code-of-practice-on-time-off-for-trade-union-duties-and-activities" target="_blank" rel="noopener noreferrer">
+      Time off Re
+    </a>
+
+    <a class="btn blue-btn" href="https://www.acas.org.uk/acas-code-of-practice-on-disclosure-of-information-to-trade-unions-for-collective-bargaining" target="_blank" rel="noopener noreferrer">
+      Disclosure 2unions
+    </a>
+</div><div class="col span_1_of_5">
+    <p class="hdr-para">
+      <a class="hdr green-hdr" data-section-header="true">
+        <b>Being a rep</b>
+      </a>
+    </p>
+
+    <a class="btn blue-btn" href="https://docs.google.com/document/d/1YInwnfVHY6c3vgyKhMC0ACCg_ROfhyk-9SHX1IkKJ60/edit?tab=t.0#heading=h.2xj9gp5lssyx" target="_blank" rel="noopener noreferrer">
+      UEL UCU Induction
+    </a>
+
+    <a class="btn blue-btn" href="https://www.ucu.org.uk/rep" target="_blank" rel="noopener noreferrer">
+      UCU - being a rep
+    </a>
+
+    <a class="btn orange-btn" href="https://www.youtube.com/watch?v=lrjySOFLXgg" target="_blank" rel="noopener noreferrer">
+      Union benefits
+    </a>
+
+    <a class="btn orange-btn" href="https://www.youtube.com/watch?v=tiqE_LE1o4I" target="_blank" rel="noopener noreferrer">
+      Univ finances
+    </a>
+
+    <a class="btn blue-btn" href="https://www.unison.org.uk/content/uploads/2024/04/Organising-to-Win-Mapping-and-Charting-your-Workplace-2024.pdf" target="_blank" rel="noopener noreferrer">
+      Unison Workpl Mapping
+    </a>
+
+    <p class="hdr-para">
+      <a class="hdr red-hdr" data-section-header="true">
+        <b>Branch Google Docs</b>
+      </a>
+    </p>
+
+    <a class="btn blue-btn" href="https://drive.google.com/drive/folders/1oV83a2sVh4Tk4uzV6YZuePlzlqirlTlf" target="_blank" rel="noopener noreferrer">
+      Google Drive
+    </a>
+
+    <a class="btn red-btn" href="https://docs.google.com/document/d/1M3BuMoH2mMl3QTaY29lbnJ82Yonj1QNM6tUa9oC_8cA/edit?tab=t.0#heading=h.7r0dp7dkhp6j" target="_blank" rel="noopener noreferrer">
+      Casework
+    </a>
+
+    <a class="btn red-btn" href="https://docs.google.com/spreadsheets/d/13UNYm_T21Reaq-QOSyruDETxhhR_7wM-d0VCx3RmDgc" target="_blank" rel="noopener noreferrer">
+      Fac Time
+    </a>
+
+    <a class="btn red-btn" href="https://docs.google.com/document/d/1ezZdze3Upv-Hv20xDKAG_MpiDpHdCbZn9mnx46B2-YE" target="_blank" rel="noopener noreferrer">
+      Legal (not UCU)
+    </a>
+
+    <a class="btn red-btn" href="https://drive.google.com/file/d/1PiKUa5Yo6ETWVvfd-F6e_pArfi1Vkcyv/view" target="_blank" rel="noopener noreferrer">
+      UEL Recog Agreem.
+    </a>
+
+    <a class="btn red-btn" href="https://docs.google.com/document/d/1TXdBFN3IybneG0KfZCI2dJtxxkTNElyJ8Gw9FdbQDMI/edit?tab=t.0" target="_blank" rel="noopener noreferrer">
+      WAM
+    </a>
+
+    <a class="btn red-btn" href="https://docs.google.com/document/d/1q34sS55iupw_-5sd2spMnQKMwFulQ7jiBV7JQZ3EWhE/edit?tab=t.0" target="_blank" rel="noopener noreferrer">
+      Working Hours
+    </a>
+</div><div class="col span_1_of_5">
+    <p class="hdr-para">
+      <a class="hdr blue-hdr" data-section-header="true">
+        <b>SOCIAL MEDIA</b>
+      </a>
+    </p>
+
+    <a class="btn purple-btn" href="https://twitter.com/" target="_blank" rel="noopener noreferrer">
+      Twitter
+    </a>
+
+    <a class="btn purple-btn" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">
+      YouTube
+    </a>
+
+    <a class="btn purple-btn" href="https://www.linkedin.com/home" target="_blank" rel="noopener noreferrer">
+      Linked In
+    </a>
+
+    <a class="btn purple-btn" href="https://facebook.com/" target="_blank" rel="noopener noreferrer">
+      Facebook
+    </a>
+
+    <a class="btn purple-btn" href="https://www.instagram.com/?hl=en" target="_blank" rel="noopener noreferrer">
+      Instagram
+    </a>
+
+    <p class="hdr-para">
+      <a class="hdr orange-hdr" data-section-header="true">
+        <b>Other</b>
+      </a>
+    </p>
+
+    <a class="btn blue-btn" href="https://www.hepi.ac.uk/reports/" target="_blank" rel="noopener noreferrer">
+      HE policy institute
+    </a>
+
+    <a class="btn blue-btn" href="https://wonkhe.com/" target="_blank" rel="noopener noreferrer">
+      WonkHE
+    </a>
+
+    <a class="btn orange-btn" href="https://campaignforucudemocracy.com/" target="_blank" rel="noopener noreferrer">
+      Camp UCU Democ
+    </a>
+
+    <a class="btn orange-btn" href="https://uculeft.org/posts/" target="_blank" rel="noopener noreferrer">
+      UCU Left
+    </a>
+
+    <a class="btn orange-btn" href="https://ucucommons.org/" target="_blank" rel="noopener noreferrer">
+      UCU Commons
+    </a>
+</div>
+  </div>
+</div>
+
+<script>
+  (function() {
+    var form = document.querySelector('.searchbar-form');
+    if (form) {
+      form.addEventListener('submit', function() {
+        var type = form.querySelector('input[name="searchtype"]:checked');
+        var q = form.querySelector('input[name="q"]');
+        if (type && type.value === 'wiki' && q) {
+          q.value = q.value + ' site:wikipedia.org';
+        }
+      });
+    }
+    var headers = document.querySelectorAll('[data-section-header="true"]');
+    headers.forEach(function(h) {
+      h.addEventListener('click', function(ev) {
+        ev.preventDefault();
+        var current = h.parentElement.nextElementSibling;
+        var hiding = false;
+        while (current) {
+          var nextHeader = current.querySelector && current.querySelector('[data-section-header="true"]');
+          if (nextHeader) break;
+          if (current.tagName === 'A' && current.classList.contains('btn')) {
+            hiding = current.style.display !== 'none';
+            break;
+          }
+          current = current.nextElementSibling;
+        }
+        current = h.parentElement.nextElementSibling;
+        while (current) {
+          var nextHeader2 = current.querySelector && current.querySelector('[data-section-header="true"]');
+          if (nextHeader2) break;
+          if (current.tagName === 'A' && current.classList.contains('btn')) {
+            current.style.display = hiding ? 'none' : '';
+          }
+          current = current.nextElementSibling;
+        }
+      });
+    });
+  })();
+</script>
+</body>
+</html>

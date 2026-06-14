@@ -2,506 +2,725 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>CW LINKS</title>
+  <title>MB Links</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
 
-body{
-  margin:0;
-  padding:0;
-  font-family:Arial, Helvetica, sans-serif;
-  background:#ffffff;
-  color:#333333;
-}
-
-/* Search bar */
-.searchbar-wrapper{
-  background:#f1f1f1;
-  padding:10px 15px;
-  border-bottom:1px solid #ddd;
-}
-.searchbar-form{
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px;
-  align-items:center;
-  font-size:14px;
-}
-.searchbar-form input[type="text"]{
-  flex:1 1 200px;
-  padding:6px 8px;
-  border:1px solid #ccc;
-  border-radius:2px;
-  font-size:14px;
-}
-.searchbar-form button{
-  padding:6px 12px;
-  border-radius:2px;
-  border:1px solid #4d90fe;
-  background:#4d90fe;
-  color:#fff;
-  cursor:pointer;
-}
-.searchbar-form button:hover{
-  background:#3367d6;
-}
-.searchbar-form label{
-  display:inline-flex;
-  align-items:center;
-  gap:4px;
-  font-size:13px;
-}
-
-/* Optional headline */
-.page-headline{
-  padding:12px 15px 0 15px;
-  font-size:20px;
-  font-weight:bold;
-}
-
-/* Main layout */
-.maincontent{
-  clear:both;
-  width:80%;
-  font-size:.8125em;
-  max-width:92.3em;
-  margin:0 auto;
-  padding:1em 0;
-  color:#333333;
-  line-height:1.5em;
-  position:relative;
-}
-.section{
-  clear:both;
-  padding:0;
-  margin:0;
-}
-
-/* FLEXBOX 5-column layout */
-.group{
-  display:flex;
-  flex-wrap:nowrap;            /* no wrapping on desktop */
-  justify-content:space-between;
-}
-
-/* Columns: fixed 5 across */
-.col{
-  box-sizing:border-box;
-  flex:0 0 19%;                /* ~5 columns across */
-  max-width:19%;
-  margin:1% 0;
-}
-
-/* Keep span_1_of_5 etc. for compatibility */
-.span_1_of_5,
-.span_2_of_5,
-.span_3_of_5,
-.span_4_of_5,
-.span_5_of_5{}
-
-/* Phone layout: stack columns */
-@media only screen and (max-width:767px){
-  .group{
-    flex-wrap:wrap;
-  }
-  .col{
-    flex:1 1 100%;
-    max-width:100%;
-    margin:1% 0;
-  }
-}
-
-/* Buttons – as original */
-.btn{
-  text-align:left;
-  width:200px;
-  color:#333;
-  position:relative;
-  display:inline-block;
-  overflow:visible;
-  margin:8px 0 0;
-  padding:10px 14px;
-  cursor:pointer;
-  outline:0;
-  border-style:none none none solid;
-  border-width:0 0 0 3px;
-  border-image:none 100% / 1 / 0 stretch;
-  background:#eee none repeat scroll 0 0;
-  z-index:1;
-  font-family:"Segoe UI",Helvetica,Arial,sans-serif;
-  font-size:16px;
-  line-height:18px;
-  min-width:42px;
-  text-shadow:#fff 0 1px 0;
-  text-decoration:none;
-  white-space:nowrap;
-  vertical-align:inherit;
-  font-weight:600;
-}
-.btn:hover{
-  background-color:#aaa;
-  color:#000;
-}
-
-/* Colour classes – palette-driven */
-.blue-btn{   border-color:currentcolor currentcolor currentcolor #4d90fe; }
-.green-btn{  border-color:currentcolor currentcolor currentcolor #35aa47; }
-.orange-btn{ border-color:currentcolor currentcolor currentcolor #d84a38; }
-.purple-btn{ border-color:currentcolor currentcolor currentcolor #852b99; }
-.red-btn{    border-color:currentcolor currentcolor currentcolor #bd121d; }
-
-/* Headers – as original */
-.hdr{
-  text-align:left;
-  width:200px;
-  color:#fff;
-  position:relative;
-  display:inline-block;
-  overflow:visible;
-  margin:0;
-  margin-top:8px;
-  padding:10px 14px;
-  cursor:pointer;
-  outline:0;
-  border:0;
-  background-repeat:repeat-x;
-  z-index:1;
-  font-family:"Segoe UI",Helvetica,Arial,sans-serif;
-  font-size:14px;
-  line-height:14px;
-  min-width:42px;
-  text-shadow:none;
-  text-decoration:none;
-  white-space:nowrap;
-  vertical-align:inherit;
-}
-
-/* Header colours */
-.blue-hdr{   background-color:#4d90fe; }
-.green-hdr{  background-color:#35aa47; }
-.orange-hdr{ background-color:#d84a38; }
-.purple-hdr{ background-color:#852b99; }
-.red-hdr{    background-color:#bd121d; }
-
-/* Header paragraph – controls vertical spacing */
-.hdr-para{
-  margin-bottom:1.8em;
-  line-height:160%;
-  margin:0;
-}
+:root{--spb-columns:5;--spb-c-blue:#4d90fe;--spb-c-green:#35aa47;--spb-c-orange:#d84a38;--spb-c-purple:#852b99;--spb-c-red:#bd121d;}
+body[data-spb-skin="classic"]{margin:0;padding:0;background:#ffffff;color:#333333;}
+.spb-start-page{font-family:Arial,Helvetica,sans-serif;background:#ffffff;color:#333333;}
+.spb-searchbar-wrapper{background:#f1f1f1;padding:12px 15px;border-bottom:1px solid #ddd;}
+.spb-searchbar-inner{width:84%;max-width:96em;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;}
+.spb-menu-title{font-family:"Segoe UI",Helvetica,Arial,sans-serif;font-size:20px;line-height:1.2;font-weight:700;color:#333333;white-space:nowrap;}
+.spb-searchbar-form{flex:1 1 520px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:14px;min-width:260px;}
+.spb-searchbar-form input[type="text"]{flex:1 1 320px;padding:8px 10px;border:1px solid #ccc;border-radius:2px;font-size:15px;min-width:0;}
+.spb-searchbar-form input[type="text"]:focus{outline:2px solid var(--spb-c-blue);outline-offset:0;border-color:var(--spb-c-blue);}
+.spb-searchbar-form button{padding:8px 16px;border-radius:2px;border:1px solid var(--spb-c-blue);background:var(--spb-c-blue);color:#fff;cursor:pointer;font-size:14px;font-weight:700;}
+.spb-searchbar-form button:hover{filter:brightness(.92);}
+.spb-searchbar-form label{display:inline-flex;align-items:center;gap:4px;font-size:13px;}
+.spb-page-headline{padding:12px 15px 0 15px;font-size:20px;font-weight:bold;text-align:center;}
+.spb-maincontent{clear:both;width:84%;font-size:.8125em;max-width:96em;margin:0 auto;padding:1em 0;color:#333333;line-height:1.5em;position:relative;}
+.spb-section{clear:both;padding:0;margin:0;}
+.spb-group{display:flex;flex-wrap:wrap;gap:0 2%;}
+.spb-col{box-sizing:border-box;flex:0 0 calc((100% - (var(--spb-columns) - 1)*2%)/var(--spb-columns));max-width:calc((100% - (var(--spb-columns) - 1)*2%)/var(--spb-columns));margin:1% 0;}
+@media only screen and (max-width:767px){.spb-col{flex:1 1 100%;max-width:100%;margin:1% 0;}.spb-searchbar-inner,.spb-maincontent{width:100%;padding-left:0;padding-right:0;}.spb-searchbar-inner{display:block;}.spb-menu-title{white-space:normal;margin-bottom:8px;}.spb-maincontent{padding:1em 12px;width:auto;}}
+.spb-btn{box-sizing:border-box;text-align:left;display:block;width:100%;color:#333;position:relative;overflow:hidden;margin:8px 0 0;padding:10px 14px;cursor:pointer;outline:0;border-style:none none none solid;border-width:0 0 0 3px;background:#eee;z-index:1;font-family:"Segoe UI",Helvetica,Arial,sans-serif;font-size:16px;line-height:18px;text-shadow:#fff 0 1px 0;text-decoration:none;white-space:nowrap;text-overflow:ellipsis;font-weight:600;}
+.spb-btn:hover{background-color:#aaa;color:#000;}
+.spb-btn[hidden]{display:none;}
+.spb-blue-btn{border-left-color:var(--spb-c-blue);}.spb-green-btn{border-left-color:var(--spb-c-green);}.spb-orange-btn{border-left-color:var(--spb-c-orange);}.spb-purple-btn{border-left-color:var(--spb-c-purple);}.spb-red-btn{border-left-color:var(--spb-c-red);}
+.spb-hdr{box-sizing:border-box;text-align:left;display:block;width:100%;color:#fff;position:relative;overflow:hidden;margin:8px 0 0;padding:10px 14px;cursor:pointer;outline:0;border:0;z-index:1;font-family:"Segoe UI",Helvetica,Arial,sans-serif;font-size:14px;line-height:14px;text-decoration:none;white-space:nowrap;text-overflow:ellipsis;font-weight:700;appearance:none;-webkit-appearance:none;}
+.spb-hdr:focus{outline:2px solid #111;outline-offset:2px;}
+.spb-blue-hdr{background-color:var(--spb-c-blue);}.spb-green-hdr{background-color:var(--spb-c-green);}.spb-orange-hdr{background-color:var(--spb-c-orange);}.spb-purple-hdr{background-color:var(--spb-c-purple);}.spb-red-hdr{background-color:var(--spb-c-red);}
+.spb-hdr-para{margin:0;line-height:160%;}
 
   </style>
 </head>
-<body>
-
-<div class="searchbar-wrapper">
-  <form class="searchbar-form" method="get" action="https://www.google.co.uk/search">
-    <input type="text" name="q" placeholder="Search...">
-    <label><input type="radio" name="searchtype" value="web" checked> Web</label>
-    <label><input type="radio" name="searchtype" value="wiki"> Wikipedia</label>
-    <button type="submit">Go</button>
-  </form>
+<body data-spb-skin="classic" data-spb-columns="5" data-spb-colours="primary" data-spb-show-title="true">
+<div class="spb-start-page" data-spb-menu-root="true">
+<div class="spb-searchbar-wrapper">
+  <div class="spb-searchbar-inner">
+    <div class="spb-menu-title">MB Links</div>
+    <form class="spb-searchbar-form" method="get" action="https://www.google.co.uk/search">
+      <input type="text" name="q" placeholder="Search…" aria-label="Search the web" autofocus>
+      <label><input type="radio" name="searchtype" value="web" checked> Web</label>
+      <label><input type="radio" name="searchtype" value="wiki"> Wikipedia</label>
+      <button type="submit">Search</button>
+    </form>
+  </div>
 </div>
-
-<div class="maincontent">
-  <div class="section group">
-<div class="col span_1_of_5">
-    <p class="hdr-para">
-      <a class="hdr green-hdr" data-section-header="true">
-        <b>Common</b>
-      </a>
+<div class="spb-maincontent">
+  <div class="spb-section spb-group">
+<div class="spb-col">
+    <p class="spb-hdr-para">
+      <button type="button" class="spb-hdr spb-green-hdr" data-spb-section-header="true" aria-expanded="true">Common</button>
     </p>
 
-    <a class="btn green-btn" href="https://mail.google.com/" target="_blank" rel="noopener noreferrer">
+    <a class="spb-btn spb-green-btn" href="https://mail.google.com/" target="_blank" rel="noopener noreferrer">
       Gmail
     </a>
 
-    <a class="btn green-btn" href="http://mail.live.com/" target="_blank" rel="noopener noreferrer">
+    <a class="spb-btn spb-green-btn" href="http://mail.live.com/" target="_blank" rel="noopener noreferrer">
       Live
     </a>
 
-    <p class="hdr-para">
-      <a class="hdr blue-hdr" data-section-header="true">
-        <b>UEL</b>
-      </a>
+    <p class="spb-hdr-para">
+      <button type="button" class="spb-hdr spb-orange-hdr" data-spb-section-header="true" aria-expanded="true">DEVELOPMENT</button>
     </p>
 
-    <a class="btn blue-btn" href="https://outlook.office.com/owa/?realm=uel.ac.uk" target="_blank" rel="noopener noreferrer">
-      UEL email
-    </a>
-
-    <a class="btn blue-btn" href="https://moodle.uel.ac.uk/my/" target="_blank" rel="noopener noreferrer">
-      UEL moodle
-    </a>
-
-    <a class="btn blue-btn" href="https://uelac.sharepoint.com/Pages/home.aspx" target="_blank" rel="noopener noreferrer">
-      UEL intranet
-    </a>
-
-    <a class="btn blue-btn" href="https://uelac-my.sharepoint.com/personal/beachill_uel_ac_uk/_layouts/15/onedrive.aspx" target="_blank" rel="noopener noreferrer">
-      UEL OneDrive
-    </a>
-
-    <a class="btn blue-btn" href="http://scholar.google.co.uk/" target="_blank" rel="noopener noreferrer">
-      Library.
-    </a>
-
-    <p class="hdr-para">
-      <a class="hdr purple-hdr" data-section-header="true">
-        <b>ACADEMIC</b>
-      </a>
-    </p>
-
-    <a class="btn blue-btn" href="https://search.chequeredhistory.com/uel/" target="_blank" rel="noopener noreferrer">
-      UEL Search
-    </a>
-
-    <a class="btn purple-btn" href="https://scholar.google.co.uk/" target="_blank" rel="noopener noreferrer">
-      Scholar
-    </a>
-
-    <a class="btn blue-btn" href="http://learn.chequeredhistory.com/" target="_blank" rel="noopener noreferrer">
-      CH Learn
-    </a>
-</div><div class="col span_1_of_5">
-    <p class="hdr-para">
-      <a class="hdr blue-hdr" data-section-header="true">
-        <b>NEWS</b>
-      </a>
-    </p>
-
-    <a class="btn blue-btn" href="https://www.telegraph.co.uk/" target="_blank" rel="noopener noreferrer">
-      Telegraph
-    </a>
-
-    <a class="btn blue-btn" href="http://www.thetimes.co.uk/tto/news/" target="_blank" rel="noopener noreferrer">
-      Times
-    </a>
-
-    <a class="btn blue-btn" href="https://www.spectator.co.uk/" target="_blank" rel="noopener noreferrer">
-      Spectator
-    </a>
-
-    <a class="btn green-btn" href="http://www.spiked-online.com/" target="_blank" rel="noopener noreferrer">
-      Spiked
-    </a>
-
-    <a class="btn red-btn" href="http://www.theregister.co.uk/" target="_blank" rel="noopener noreferrer">
-      El Reg
-    </a>
-
-    <a class="btn blue-btn" href="http://www.nytimes.com/" target="_blank" rel="noopener noreferrer">
-      New York Times
-    </a>
-
-    <a class="btn blue-btn" href="http://www.huffingtonpost.com/" target="_blank" rel="noopener noreferrer">
-      Huffington Post
-    </a>
-
-    <a class="btn blue-btn" href="http://www.thedailybeast.com/" target="_blank" rel="noopener noreferrer">
-      Daily Beast
-    </a>
-
-    <a class="btn purple-btn" href="http://www.newsnow.co.uk/h/Sport/Football/League+One/Barnsley" target="_blank" rel="noopener noreferrer">
-      Barnsley FC - news
-    </a>
-
-    <a class="btn purple-btn" href="https://www.bbc.co.uk/sport/football" target="_blank" rel="noopener noreferrer">
-      BBC Football
-    </a>
-
-    <a class="btn blue-btn" href="https://thecritic.co.uk/" target="_blank" rel="noopener noreferrer">
-      Critic
-    </a>
-
-    <a class="btn blue-btn" href="https://literaryreview.co.uk/" target="_blank" rel="noopener noreferrer">
-      Literary Review
-    </a>
-</div><div class="col span_1_of_5">
-    <p class="hdr-para">
-      <a class="hdr blue-hdr" data-section-header="true">
-        <b>SOCIAL MEDIA</b>
-      </a>
-    </p>
-
-    <a class="btn purple-btn" href="https://facebook.com/" target="_blank" rel="noopener noreferrer">
-      Facebook
-    </a>
-
-    <a class="btn purple-btn" href="https://twitter.com/" target="_blank" rel="noopener noreferrer">
-      Twitter
-    </a>
-
-    <a class="btn purple-btn" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">
-      YouTube
-    </a>
-
-    <a class="btn purple-btn" href="https://www.linkedin.com/home" target="_blank" rel="noopener noreferrer">
-      Linked In
-    </a>
-
-    <a class="btn purple-btn" href="https://www.instagram.com/?hl=en" target="_blank" rel="noopener noreferrer">
-      Instagram
-    </a>
-
-    <a class="btn blue-btn" href="https://www.reddit.com/" target="_blank" rel="noopener noreferrer">
-      Reddit
-    </a>
-
-    <a class="btn blue-btn" href="https://substack.com/" target="_blank" rel="noopener noreferrer">
-      Substack
-    </a>
-
-    <p class="hdr-para">
-      <a class="hdr orange-hdr" data-section-header="true">
-        <b>DEVELOPMENT</b>
-      </a>
-    </p>
-
-    <a class="btn orange-btn" href="http://fasthosts.co.uk/" target="_blank" rel="noopener noreferrer">
+    <a class="spb-btn spb-orange-btn" href="http://fasthosts.co.uk/" target="_blank" rel="noopener noreferrer">
       Fasthosts
     </a>
 
-    <a class="btn orange-btn" href="https://gator1887.hostgator.com:2083/" target="_blank" rel="noopener noreferrer">
+    <a class="spb-btn spb-orange-btn" href="https://gator1887.hostgator.com:2083/" target="_blank" rel="noopener noreferrer">
       HG CP
     </a>
 
-    <a class="btn red-btn" href="https://lightsail.aws.amazon.com/ls/webapp/home/instances" target="_blank" rel="noopener noreferrer">
+    <a class="spb-btn spb-red-btn" href="https://lightsail.aws.amazon.com/ls/webapp/home/instances" target="_blank" rel="noopener noreferrer">
       Lightsail
     </a>
 
-    <a class="btn red-btn" href="https://console.aws.amazon.com/billing/home?region=eu-west-2#/" target="_blank" rel="noopener noreferrer">
+    <a class="spb-btn spb-red-btn" href="https://console.aws.amazon.com/billing/home?region=eu-west-2#/" target="_blank" rel="noopener noreferrer">
       Billing
     </a>
-</div><div class="col span_1_of_5">
-    <p class="hdr-para">
-      <a class="hdr orange-hdr" data-section-header="true">
-        <b>MEDIA</b>
-      </a>
+
+    <p class="spb-hdr-para">
+      <button type="button" class="spb-hdr spb-orange-hdr" data-spb-section-header="true" aria-expanded="true">SITES</button>
     </p>
 
-    <a class="btn orange-btn" href="https://www.bbc.co.uk/iplayer" target="_blank" rel="noopener noreferrer">
-      iplayer
-    </a>
-
-    <a class="btn orange-btn" href="http://www.netflix.com/WiHome" target="_blank" rel="noopener noreferrer">
-      Netflix
-    </a>
-
-    <a class="btn orange-btn" href="http://www.bbc.co.uk/radio4/" target="_blank" rel="noopener noreferrer">
-      Radio 4
-    </a>
-
-    <a class="btn blue-btn" href="https://www.itv.com/" target="_blank" rel="noopener noreferrer">
-      ITV
-    </a>
-
-    <a class="btn blue-btn" href="https://www.channel4.com/" target="_blank" rel="noopener noreferrer">
-      Channel 4
-    </a>
-
-    <a class="btn purple-btn" href="http://192.168.0.106:32400/web/index.html#!/dashboard" target="_blank" rel="noopener noreferrer">
-      Plex (local)
-    </a>
-
-    <a class="btn purple-btn" href="https://app.plex.tv/desktop" target="_blank" rel="noopener noreferrer">
-      Plex (web)
-    </a>
-
-    <p class="hdr-para">
-      <a class="hdr green-hdr" data-section-header="true">
-        <b>Other</b>
-      </a>
-    </p>
-
-    <a class="btn green-btn" href="http://oxforddictionaries.com/" target="_blank" rel="noopener noreferrer">
-      OED
-    </a>
-
-    <a class="btn green-btn" href="http://www.memrise.com/" target="_blank" rel="noopener noreferrer">
-      Memrise
-    </a>
-</div><div class="col span_1_of_5">
-    <p class="hdr-para">
-      <a class="hdr orange-hdr" data-section-header="true">
-        <b>SITES</b>
-      </a>
-    </p>
-
-    <a class="btn green-btn" href="https://conisbroughanddenabyhistory.org.uk/" target="_blank" rel="noopener noreferrer">
+    <a class="spb-btn spb-green-btn" href="https://conisbroughanddenabyhistory.org.uk/" target="_blank" rel="noopener noreferrer">
       Conisbrough &amp; Denaby
     </a>
 
-    <a class="btn green-btn" href="https://dearnevalleyhistory.org.uk" target="_blank" rel="noopener noreferrer">
+    <a class="spb-btn spb-green-btn" href="https://dearnevalleyhistory.org.uk" target="_blank" rel="noopener noreferrer">
       Dearne Valley History
     </a>
 
-    <a class="btn blue-btn" href="https://chequeredhistory.com" target="_blank" rel="noopener noreferrer">
+    <a class="spb-btn spb-blue-btn" href="https://chequeredhistory.com" target="_blank" rel="noopener noreferrer">
       Chequered History
     </a>
 
-    <a class="btn blue-btn" href="https://clubparakeet.com" target="_blank" rel="noopener noreferrer">
+    <a class="spb-btn spb-blue-btn" href="https://clubparakeet.com" target="_blank" rel="noopener noreferrer">
       Club Parakeet
     </a>
 
-    <a class="btn blue-btn" href="https://idblast.co.uk" target="_blank" rel="noopener noreferrer">
+    <a class="spb-btn spb-blue-btn" href="https://idblast.co.uk" target="_blank" rel="noopener noreferrer">
       ID Blast
     </a>
 
-    <a class="btn blue-btn" href="https://map.chequeredhistory.com" target="_blank" rel="noopener noreferrer">
+    <a class="spb-btn spb-blue-btn" href="https://map.chequeredhistory.com" target="_blank" rel="noopener noreferrer">
       map.chequered
     </a>
 
-    <a class="btn blue-btn" href="https://worldofthenews.com" target="_blank" rel="noopener noreferrer">
+    <a class="spb-btn spb-blue-btn" href="https://worldofthenews.com" target="_blank" rel="noopener noreferrer">
       World of the News
     </a>
 
-    <a class="btn blue-btn" href="https://londoneastresearch.org" target="_blank" rel="noopener noreferrer">
+    <a class="spb-btn spb-blue-btn" href="https://londoneastresearch.org" target="_blank" rel="noopener noreferrer">
       London East Research
+    </a>
+</div><div class="spb-col">
+    <p class="spb-hdr-para">
+      <button type="button" class="spb-hdr spb-blue-hdr" data-spb-section-header="true" aria-expanded="true">UEL</button>
+    </p>
+
+    <a class="spb-btn spb-blue-btn" href="https://outlook.office.com/owa/?realm=uel.ac.uk" target="_blank" rel="noopener noreferrer">
+      UEL email
+    </a>
+
+    <a class="spb-btn spb-blue-btn" href="https://moodle.uel.ac.uk/my/" target="_blank" rel="noopener noreferrer">
+      UEL moodle
+    </a>
+
+    <a class="spb-btn spb-blue-btn" href="https://uelac.sharepoint.com/Pages/home.aspx" target="_blank" rel="noopener noreferrer">
+      UEL intranet
+    </a>
+
+    <a class="spb-btn spb-blue-btn" href="https://uelac-my.sharepoint.com/personal/beachill_uel_ac_uk/_layouts/15/onedrive.aspx" target="_blank" rel="noopener noreferrer">
+      UEL OneDrive
+    </a>
+
+    <a class="spb-btn spb-blue-btn" href="http://scholar.google.co.uk/" target="_blank" rel="noopener noreferrer">
+      Library.
+    </a>
+
+    <p class="spb-hdr-para">
+      <button type="button" class="spb-hdr spb-green-hdr" data-spb-section-header="true" aria-expanded="true">Other</button>
+    </p>
+
+    <a class="spb-btn spb-green-btn" href="http://oxforddictionaries.com/" target="_blank" rel="noopener noreferrer">
+      OED
+    </a>
+
+    <a class="spb-btn spb-green-btn" href="http://www.memrise.com/" target="_blank" rel="noopener noreferrer">
+      Memrise
+    </a>
+</div><div class="spb-col">
+    <p class="spb-hdr-para">
+      <button type="button" class="spb-hdr spb-purple-hdr" data-spb-section-header="true" aria-expanded="true">ACADEMIC</button>
+    </p>
+
+    <a class="spb-btn spb-blue-btn" href="https://search.chequeredhistory.com/uel/" target="_blank" rel="noopener noreferrer">
+      UEL Search
+    </a>
+
+    <a class="spb-btn spb-purple-btn" href="https://scholar.google.co.uk/" target="_blank" rel="noopener noreferrer">
+      Scholar
+    </a>
+
+    <a class="spb-btn spb-blue-btn" href="http://learn.chequeredhistory.com/" target="_blank" rel="noopener noreferrer">
+      CH Learn
+    </a>
+
+    <p class="spb-hdr-para">
+      <button type="button" class="spb-hdr spb-orange-hdr" data-spb-section-header="true" aria-expanded="true">MEDIA</button>
+    </p>
+
+    <a class="spb-btn spb-orange-btn" href="https://www.bbc.co.uk/iplayer" target="_blank" rel="noopener noreferrer">
+      iplayer
+    </a>
+
+    <a class="spb-btn spb-orange-btn" href="http://www.netflix.com/WiHome" target="_blank" rel="noopener noreferrer">
+      Netflix
+    </a>
+
+    <a class="spb-btn spb-orange-btn" href="http://www.bbc.co.uk/radio4/" target="_blank" rel="noopener noreferrer">
+      Radio 4
+    </a>
+
+    <a class="spb-btn spb-blue-btn" href="https://www.itv.com/" target="_blank" rel="noopener noreferrer">
+      ITV
+    </a>
+
+    <a class="spb-btn spb-blue-btn" href="https://www.channel4.com/" target="_blank" rel="noopener noreferrer">
+      Channel 4
+    </a>
+
+    <a class="spb-btn spb-purple-btn" href="http://192.168.0.106:32400/web/index.html#!/dashboard" target="_blank" rel="noopener noreferrer">
+      Plex (local)
+    </a>
+
+    <a class="spb-btn spb-purple-btn" href="https://app.plex.tv/desktop" target="_blank" rel="noopener noreferrer">
+      Plex (web)
+    </a>
+</div><div class="spb-col">
+    <p class="spb-hdr-para">
+      <button type="button" class="spb-hdr spb-blue-hdr" data-spb-section-header="true" aria-expanded="true">NEWS</button>
+    </p>
+
+    <a class="spb-btn spb-blue-btn" href="https://www.telegraph.co.uk/" target="_blank" rel="noopener noreferrer">
+      Telegraph
+    </a>
+
+    <a class="spb-btn spb-blue-btn" href="http://www.thetimes.co.uk/tto/news/" target="_blank" rel="noopener noreferrer">
+      Times
+    </a>
+
+    <a class="spb-btn spb-blue-btn" href="https://www.spectator.co.uk/" target="_blank" rel="noopener noreferrer">
+      Spectator
+    </a>
+
+    <a class="spb-btn spb-green-btn" href="http://www.spiked-online.com/" target="_blank" rel="noopener noreferrer">
+      Spiked
+    </a>
+
+    <a class="spb-btn spb-red-btn" href="http://www.theregister.co.uk/" target="_blank" rel="noopener noreferrer">
+      El Reg
+    </a>
+
+    <a class="spb-btn spb-blue-btn" href="http://www.nytimes.com/" target="_blank" rel="noopener noreferrer">
+      New York Times
+    </a>
+
+    <a class="spb-btn spb-blue-btn" href="http://www.huffingtonpost.com/" target="_blank" rel="noopener noreferrer">
+      Huffington Post
+    </a>
+
+    <a class="spb-btn spb-blue-btn" href="http://www.thedailybeast.com/" target="_blank" rel="noopener noreferrer">
+      Daily Beast
+    </a>
+
+    <a class="spb-btn spb-purple-btn" href="http://www.newsnow.co.uk/h/Sport/Football/League+One/Barnsley" target="_blank" rel="noopener noreferrer">
+      Barnsley FC - news
+    </a>
+
+    <a class="spb-btn spb-purple-btn" href="https://www.bbc.co.uk/sport/football" target="_blank" rel="noopener noreferrer">
+      BBC Football
+    </a>
+
+    <a class="spb-btn spb-blue-btn" href="https://thecritic.co.uk/" target="_blank" rel="noopener noreferrer">
+      Critic
+    </a>
+
+    <a class="spb-btn spb-blue-btn" href="https://literaryreview.co.uk/" target="_blank" rel="noopener noreferrer">
+      Literary Review
+    </a>
+</div><div class="spb-col">
+    <p class="spb-hdr-para">
+      <button type="button" class="spb-hdr spb-blue-hdr" data-spb-section-header="true" aria-expanded="true">SOCIAL MEDIA</button>
+    </p>
+
+    <a class="spb-btn spb-purple-btn" href="https://facebook.com/" target="_blank" rel="noopener noreferrer">
+      Facebook
+    </a>
+
+    <a class="spb-btn spb-purple-btn" href="https://twitter.com/" target="_blank" rel="noopener noreferrer">
+      Twitter
+    </a>
+
+    <a class="spb-btn spb-purple-btn" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">
+      YouTube
+    </a>
+
+    <a class="spb-btn spb-purple-btn" href="https://www.linkedin.com/home" target="_blank" rel="noopener noreferrer">
+      Linked In
+    </a>
+
+    <a class="spb-btn spb-purple-btn" href="https://www.instagram.com/?hl=en" target="_blank" rel="noopener noreferrer">
+      Instagram
+    </a>
+
+    <a class="spb-btn spb-blue-btn" href="https://www.reddit.com/" target="_blank" rel="noopener noreferrer">
+      Reddit
+    </a>
+
+    <a class="spb-btn spb-blue-btn" href="https://substack.com/" target="_blank" rel="noopener noreferrer">
+      Substack
     </a>
 </div>
   </div>
 </div>
-
-<script>
-  (function() {
-    var form = document.querySelector('.searchbar-form');
-    if (form) {
-      form.addEventListener('submit', function() {
-        var type = form.querySelector('input[name="searchtype"]:checked');
-        var q = form.querySelector('input[name="q"]');
-        if (type && type.value === 'wiki' && q) {
-          q.value = q.value + ' site:wikipedia.org';
+</div>
+<script type="application/json" id="spb-menu-config">
+{
+  "format": "personal-start-page-creator-v1",
+  "title": "MB Links",
+  "description": "Embedded menu config for reloading this exported start page in the Start Page Builder.",
+  "filename": "index.html",
+  "columns": 5,
+  "colours": "primary",
+  "showTitle": true,
+  "sections": [
+    {
+      "name": "Common",
+      "colour": "green",
+      "included": true,
+      "links": [
+        {
+          "label": "Gmail",
+          "url": "https://mail.google.com/",
+          "colour": "green",
+          "included": true
+        },
+        {
+          "label": "Live",
+          "url": "http://mail.live.com/",
+          "colour": "green",
+          "included": true
         }
-      });
+      ]
+    },
+    {
+      "name": "DEVELOPMENT",
+      "colour": "orange",
+      "included": true,
+      "links": [
+        {
+          "label": "Fasthosts",
+          "url": "http://fasthosts.co.uk/",
+          "colour": "orange",
+          "included": true
+        },
+        {
+          "label": "HG CP",
+          "url": "https://gator1887.hostgator.com:2083/",
+          "colour": "orange",
+          "included": true
+        },
+        {
+          "label": "Lightsail",
+          "url": "https://lightsail.aws.amazon.com/ls/webapp/home/instances",
+          "colour": "red",
+          "included": true
+        },
+        {
+          "label": "Billing",
+          "url": "https://console.aws.amazon.com/billing/home?region=eu-west-2#/",
+          "colour": "red",
+          "included": true
+        }
+      ]
+    },
+    {
+      "name": "SITES",
+      "colour": "orange",
+      "included": true,
+      "links": [
+        {
+          "label": "Conisbrough & Denaby",
+          "url": "https://conisbroughanddenabyhistory.org.uk/",
+          "colour": "green",
+          "included": true
+        },
+        {
+          "label": "Dearne Valley History",
+          "url": "https://dearnevalleyhistory.org.uk",
+          "colour": "green",
+          "included": true
+        },
+        {
+          "label": "Chequered History",
+          "url": "https://chequeredhistory.com",
+          "colour": "blue",
+          "included": true
+        },
+        {
+          "label": "Club Parakeet",
+          "url": "https://clubparakeet.com",
+          "colour": "blue",
+          "included": true
+        },
+        {
+          "label": "ID Blast",
+          "url": "https://idblast.co.uk",
+          "colour": "blue",
+          "included": true
+        },
+        {
+          "label": "map.chequered",
+          "url": "https://map.chequeredhistory.com",
+          "colour": "blue",
+          "included": true
+        },
+        {
+          "label": "World of the News",
+          "url": "https://worldofthenews.com",
+          "colour": "blue",
+          "included": true
+        },
+        {
+          "label": "London East Research",
+          "url": "https://londoneastresearch.org",
+          "colour": "blue",
+          "included": true
+        }
+      ]
+    },
+    {
+      "name": "UEL",
+      "colour": "blue",
+      "included": true,
+      "links": [
+        {
+          "label": "UEL email",
+          "url": "https://outlook.office.com/owa/?realm=uel.ac.uk",
+          "colour": "blue",
+          "included": true
+        },
+        {
+          "label": "UEL moodle",
+          "url": "https://moodle.uel.ac.uk/my/",
+          "colour": "blue",
+          "included": true
+        },
+        {
+          "label": "UEL intranet",
+          "url": "https://uelac.sharepoint.com/Pages/home.aspx",
+          "colour": "blue",
+          "included": true
+        },
+        {
+          "label": "UEL OneDrive",
+          "url": "https://uelac-my.sharepoint.com/personal/beachill_uel_ac_uk/_layouts/15/onedrive.aspx",
+          "colour": "blue",
+          "included": true
+        },
+        {
+          "label": "Library.",
+          "url": "http://scholar.google.co.uk/",
+          "colour": "blue",
+          "included": true
+        }
+      ]
+    },
+    {
+      "name": "Other",
+      "colour": "green",
+      "included": true,
+      "links": [
+        {
+          "label": "OED",
+          "url": "http://oxforddictionaries.com/",
+          "colour": "green",
+          "included": true
+        },
+        {
+          "label": "Memrise",
+          "url": "http://www.memrise.com/",
+          "colour": "green",
+          "included": true
+        }
+      ]
+    },
+    {
+      "name": "ACADEMIC",
+      "colour": "purple",
+      "included": true,
+      "links": [
+        {
+          "label": "UEL Search",
+          "url": "https://search.chequeredhistory.com/uel/",
+          "colour": "blue",
+          "included": true
+        },
+        {
+          "label": "Scholar",
+          "url": "https://scholar.google.co.uk/",
+          "colour": "purple",
+          "included": true
+        },
+        {
+          "label": "CH Learn",
+          "url": "http://learn.chequeredhistory.com/",
+          "colour": "blue",
+          "included": true
+        }
+      ]
+    },
+    {
+      "name": "MEDIA",
+      "colour": "orange",
+      "included": true,
+      "links": [
+        {
+          "label": "iplayer",
+          "url": "https://www.bbc.co.uk/iplayer",
+          "colour": "orange",
+          "included": true
+        },
+        {
+          "label": "Netflix",
+          "url": "http://www.netflix.com/WiHome",
+          "colour": "orange",
+          "included": true
+        },
+        {
+          "label": "Radio 4",
+          "url": "http://www.bbc.co.uk/radio4/",
+          "colour": "orange",
+          "included": true
+        },
+        {
+          "label": "ITV",
+          "url": "https://www.itv.com/",
+          "colour": "blue",
+          "included": true
+        },
+        {
+          "label": "Channel 4",
+          "url": "https://www.channel4.com/",
+          "colour": "blue",
+          "included": true
+        },
+        {
+          "label": "Plex (local)",
+          "url": "http://192.168.0.106:32400/web/index.html#!/dashboard",
+          "colour": "purple",
+          "included": true
+        },
+        {
+          "label": "Plex (web)",
+          "url": "https://app.plex.tv/desktop",
+          "colour": "purple",
+          "included": true
+        }
+      ]
+    },
+    {
+      "name": "NEWS",
+      "colour": "blue",
+      "included": true,
+      "links": [
+        {
+          "label": "Telegraph",
+          "url": "https://www.telegraph.co.uk/",
+          "colour": "blue",
+          "included": true
+        },
+        {
+          "label": "Times",
+          "url": "http://www.thetimes.co.uk/tto/news/",
+          "colour": "blue",
+          "included": true
+        },
+        {
+          "label": "Spectator",
+          "url": "https://www.spectator.co.uk/",
+          "colour": "blue",
+          "included": true
+        },
+        {
+          "label": "Spiked",
+          "url": "http://www.spiked-online.com/",
+          "colour": "green",
+          "included": true
+        },
+        {
+          "label": "El Reg",
+          "url": "http://www.theregister.co.uk/",
+          "colour": "red",
+          "included": true
+        },
+        {
+          "label": "New York Times",
+          "url": "http://www.nytimes.com/",
+          "colour": "blue",
+          "included": true
+        },
+        {
+          "label": "Huffington Post",
+          "url": "http://www.huffingtonpost.com/",
+          "colour": "blue",
+          "included": true
+        },
+        {
+          "label": "Daily Beast",
+          "url": "http://www.thedailybeast.com/",
+          "colour": "blue",
+          "included": true
+        },
+        {
+          "label": "Barnsley FC - news",
+          "url": "http://www.newsnow.co.uk/h/Sport/Football/League+One/Barnsley",
+          "colour": "purple",
+          "included": true
+        },
+        {
+          "label": "BBC Football",
+          "url": "https://www.bbc.co.uk/sport/football",
+          "colour": "purple",
+          "included": true
+        },
+        {
+          "label": "Critic",
+          "url": "https://thecritic.co.uk/",
+          "colour": "blue",
+          "included": true
+        },
+        {
+          "label": "Literary Review",
+          "url": "https://literaryreview.co.uk/",
+          "colour": "blue",
+          "included": true
+        }
+      ]
+    },
+    {
+      "name": "SOCIAL MEDIA",
+      "colour": "blue",
+      "included": true,
+      "links": [
+        {
+          "label": "Facebook",
+          "url": "https://facebook.com/",
+          "colour": "purple",
+          "included": true
+        },
+        {
+          "label": "Twitter",
+          "url": "https://twitter.com/",
+          "colour": "purple",
+          "included": true
+        },
+        {
+          "label": "YouTube",
+          "url": "https://www.youtube.com/",
+          "colour": "purple",
+          "included": true
+        },
+        {
+          "label": "Linked In",
+          "url": "https://www.linkedin.com/home",
+          "colour": "purple",
+          "included": true
+        },
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/?hl=en",
+          "colour": "purple",
+          "included": true
+        },
+        {
+          "label": "Reddit",
+          "url": "https://www.reddit.com/",
+          "colour": "blue",
+          "included": true
+        },
+        {
+          "label": "Substack",
+          "url": "https://substack.com/",
+          "colour": "blue",
+          "included": true
+        }
+      ]
     }
-    var headers = document.querySelectorAll('[data-section-header="true"]');
-    headers.forEach(function(h) {
-      h.addEventListener('click', function(ev) {
-        ev.preventDefault();
-        var current = h.parentElement.nextElementSibling;
-        var hiding = false;
-        while (current) {
-          var nextHeader = current.querySelector && current.querySelector('[data-section-header="true"]');
-          if (nextHeader) break;
-          if (current.tagName === 'A' && current.classList.contains('btn')) {
-            hiding = current.style.display !== 'none';
-            break;
-          }
-          current = current.nextElementSibling;
-        }
-        current = h.parentElement.nextElementSibling;
-        while (current) {
-          var nextHeader2 = current.querySelector && current.querySelector('[data-section-header="true"]');
-          if (nextHeader2) break;
-          if (current.tagName === 'A' && current.classList.contains('btn')) {
-            current.style.display = hiding ? 'none' : '';
-          }
-          current = current.nextElementSibling;
-        }
-      });
+  ]
+}
+</script>
+<script>
+  (function attachClassicMenuBehaviour(root=document, options = {}){
+  // Search form: submit a normal Google search, or append a Wikipedia site filter.
+  const form = root.querySelector(".spb-searchbar-form, .searchbar-form");
+  if(form){
+    form.addEventListener("submit", function(){
+      const type = form.querySelector('input[name="searchtype"]:checked');
+      const q = form.querySelector('input[name="q"]');
+      if(type && type.value === "wiki" && q){ q.value = q.value + " site:wikipedia.org"; }
     });
-  })();
+
+    // Exported pages autofocus the search box. Builder preview disables this.
+    const q = form.querySelector('input[name="q"]');
+    if(options.focusSearch !== false && q && q.hasAttribute("autofocus")){
+      try{ q.focus(); }catch(err){}
+    }
+  }
+
+  // Section headers collapse or expand the link buttons beneath them.
+  // New exports use data-spb-section-header and .spb-btn. The old selectors are
+  // retained here so copied/older menu fragments remain understandable.
+  const headerSelector = '[data-spb-section-header="true"], [data-section-header="true"]';
+  const linkSelector = 'a.spb-btn, a.btn';
+  const headerParaSelector = '.spb-hdr-para, .hdr-para';
+  const containsHeader = el => !!(el && (el.matches?.(headerSelector) || el.querySelector?.(headerSelector)));
+  const isLink = el => !!(el && el.matches?.(linkSelector));
+
+  root.querySelectorAll(headerSelector).forEach(function(header){
+    header.addEventListener("click", function(ev){
+      ev.preventDefault();
+
+      let current = (header.closest(headerParaSelector) || header).nextElementSibling;
+      let shouldHide = false;
+      while(current){
+        if(containsHeader(current)) break;
+        if(isLink(current)){
+          shouldHide = !current.hidden && current.style.display !== "none";
+          break;
+        }
+        current = current.nextElementSibling;
+      }
+
+      current = (header.closest(headerParaSelector) || header).nextElementSibling;
+      while(current){
+        if(containsHeader(current)) break;
+        if(isLink(current)){
+          current.hidden = shouldHide;
+          current.style.display = "";
+        }
+        current = current.nextElementSibling;
+      }
+      header.setAttribute("aria-expanded", String(!shouldHide));
+    });
+  });
+})(document);
 </script>
 </body>
 </html>
